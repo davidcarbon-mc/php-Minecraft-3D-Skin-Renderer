@@ -304,7 +304,7 @@ if( basename(__FILE__) == basename($_SERVER["SCRIPT_FILENAME"]) ) {
 				return $result;
 			}
 			else{
-				$mojangProfileContent = file_get_contents_with_cache($this->playerName, 'https://api.mojang.com/users/profiles/minecraft/' . $this->playerName . '?at=' . time());
+				$mojangProfileContent = file_get_contents_with_cache($this->playerName . 'profile', 'https://api.mojang.com/users/profiles/minecraft/' . $this->playerName . '?at=' . time());
 				$profileContentArray = json_decode($mojangProfileContent, true);
 				if(is_array($profileContentArray)) {
 					if(!array_key_exists("id", $profileContentArray)) {
