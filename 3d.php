@@ -87,6 +87,14 @@ if( basename(__FILE__) == basename($_SERVER["SCRIPT_FILENAME"]) ) {
 		
 		return false;
 	}
+
+
+	function file_get_contents_with_cache($file) {
+		// $memcache = new Memcache;
+		
+
+
+	}
 	
 	// Check if the player name value has been set, and that we are not running as an included/required file. else do nothing.
 	if(( basename(__FILE__) == basename($_SERVER["SCRIPT_FILENAME"]) ) && grabGetValue('user') !== false) {
