@@ -89,9 +89,12 @@ if( basename(__FILE__) == basename($_SERVER["SCRIPT_FILENAME"]) ) {
 	}
 
 
-	function file_get_contents_with_cache($file) {
+	function file_get_contents_with_cache($key, $file) {
 		// $memcache = new Memcache;
-		
+		$data = MemcacheUtil::serveFromMemcache($key, function() {
+			return file_get_contents($file);
+		  }
+		);
 
 
 	}
@@ -210,7 +213,7 @@ if( basename(__FILE__) == basename($_SERVER["SCRIPT_FILENAME"]) ) {
 		 */
 		
 		private function getSkinURLViaUUIDViaMojang($UUID) {
-			$mojangServiceContent = file_get_contents('https://sessionserver.mojang.com/session/minecraft/profile/' . $UUID);
+			$mojangServiceContent = file_get_contents_with_cache($UUID, 'https://sessionserver.mojang.com/session/minecraft/profile/' . $UUID);
 			$contentArray = json_decode($mojangServiceContent, true);
 			
 			if(!is_array($contentArray)) {
@@ -252,7 +255,7 @@ if( basename(__FILE__) == basename($_SERVER["SCRIPT_FILENAME"]) ) {
 				return $result;
 			}
 			else{
-				$mojangProfileContent = file_get_contents('https://api.mojang.com/users/profiles/minecraft/' . $this->playerName . '?at=' . time());
+				$mojangProfileContent = file_get_contents_with_cache($this->playerName, 'https://api.mojang.com/users/profiles/minecraft/' . $this->playerName . '?at=' . time());
 				$profileContentArray = json_decode($mojangProfileContent, true);
 				if(is_array($profileContentArray)) {
 					if(!array_key_exists("id", $profileContentArray)) {
