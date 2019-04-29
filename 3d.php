@@ -1,5 +1,6 @@
 <?php
 
+
 	/****** MINECRAFT 3D Skin Generator *****
 	 * The contents of this project were first developed by Pierre Gros on 17th April 2012.
 	 * It has once been modified by Carlos Ferreira (http://www.carlosferreira.me) on 31st May 2014.
@@ -139,12 +140,10 @@ if( basename(__FILE__) == basename($_SERVER["SCRIPT_FILENAME"]) ) {
 
 	function file_get_contents_with_cache($key, $file) {
 		// $memcache = new Memcache;
-		$data = MemcacheUtil::serveFromMemcache($key, function() {
+		return MemcacheUtil::serveFromMemcache($key, function() {
 			return file_get_contents($file);
 		  }
 		);
-
-		return $data
 
 
 	}
