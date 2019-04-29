@@ -1,5 +1,7 @@
 GUI with sliders for "php Minecraft 3D Skin Renderer", Made with Google's Materialize
 
+Use the GUI here: https://ryanhecht.github.io/php-Minecraft-3D-Skin-Renderer/
+
 Also setup Google App Engine support and caching
 
 forked from https://github.com/Gyzie/php-Minecraft-3D-Skin-Renderer
