@@ -141,7 +141,9 @@ if( basename(__FILE__) == basename($_SERVER["SCRIPT_FILENAME"]) ) {
 	function file_get_contents_with_cache($key, $file) {
 		// $memcache = new Memcache;
 		return MemcacheUtil::serveFromMemcache($key, function() {
-			return file_get_contents($file);
+			$data = file_get_contents($file)
+			print $data
+			return $data;
 		  }
 		);
 
