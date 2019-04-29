@@ -1,8 +1,12 @@
-php Minecraft 3D Skin Renderer
-=====================
+GUI with sliders for "php Minecraft 3D Skin Renderer", Made with Google's Materialize
+Also setup Google App Engine support and caching
+forked from https://github.com/Gyzie/php-Minecraft-3D-Skin-Renderer
 
-Render a 3D view of a Minecraft skin using PHP.
 
+
+
+
+------------------------------------
 Project first developed by <a href="https://github.com/supermamie/php-Minecraft-3D-skin" target="_blank">supermamie</a>. Later transalated to English by <a href="https://github.com/cajogos/php-Minecraft-3D-Skin-Renderer" target="_blank">cajogos</a>.
 My goal was to fix some issues and hopefully create full support for the 1.8 skins (1.8 support is partly done).
 
