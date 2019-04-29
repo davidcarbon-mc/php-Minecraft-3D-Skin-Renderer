@@ -1,4 +1,6 @@
 <?php
+
+include 'MemcacheUtil.php'
 	/****** MINECRAFT 3D Skin Generator *****
 	 * The contents of this project were first developed by Pierre Gros on 17th April 2012.
 	 * It has once been modified by Carlos Ferreira (http://www.carlosferreira.me) on 31st May 2014.
