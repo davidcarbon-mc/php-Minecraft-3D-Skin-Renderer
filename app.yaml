@@ -1,3 +1,7 @@
 runtime: php55
-runtime_config:
-  document_root: .
+api_version: 1
+handlers:
+- url: /poser
+  script: index.html
+- url: /3d.php
+  script: 3d.php
